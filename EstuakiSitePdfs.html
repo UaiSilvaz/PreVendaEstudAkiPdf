@@ -3,37 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portf&oacute;lio EstudAki Vestibulares com F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC &agrave; venda e cadernos ENEM em breve.">
-  <title>EstudAki Vestibulares | Portf&oacute;lio de PDFs</title>
+  <meta name="description" content="Landing page EstudAki Vestibulares com todos os materiais digitais disponiveis na Hotmart: Formula ETEC, cadernos ENEM e Super Pack 250 Questoes.">
+  <title>EstudAki Vestibulares | PDFs e Cadernos de Quest&otilde;es</title>
+  <link rel="icon" type="image/png" href="assets/ABA.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
   <link rel="preload" as="image" href="assets/estudaki-hero-principal.png">
+  <link rel="preload" as="image" href="assets/capa-etec-formula.png">
+  <link rel="preload" as="image" href="assets/CADERNO%20(1).png">
+  <link rel="preload" as="image" href="assets/CADERNO%20(2).png">
   <link rel="preload" as="image" href="assets/capa-enem-humanas.png">
   <link rel="preload" as="image" href="assets/capa-enem-exatas.png">
-  <link rel="preload" as="image" href="assets/capa-etec-formula.png">
+  <link rel="preload" as="image" href="assets/SUPER%20PACK%20250%20QUEST%C3%95ES%20ETEC%20.png">
   <style>
     :root {
       --blue: #006dff;
       --blue-700: #004bc4;
-      --blue-900: #061842;
-      --green: #36b86f;
+      --blue-950: #061842;
+      --green: #009789;
+      --green-2: #36b86f;
       --orange: #ff6400;
-      --yellow: #f0dc46;
-      --paper: #fefdfe;
-      --paper-soft: #f5f8ff;
-      --ink: #07142f;
-      --muted: #5a6682;
-      --line: #dfe7f5;
+      --yellow: #ffc400;
+      --paper: #f7faff;
       --white: #ffffff;
-      --shadow: 0 24px 70px rgba(6, 24, 66, 0.14);
+      --ink: #07142f;
+      --muted: #5c6680;
+      --line: #dfe8f6;
+      --shadow: 0 24px 70px rgba(6, 24, 66, 0.16);
+      --shadow-soft: 0 14px 34px rgba(6, 24, 66, 0.10);
       --radius: 8px;
-      --font-display: "Montserrat", "Inter", Arial, sans-serif;
-      --font-body: "Inter", Arial, sans-serif;
+      --display: "Montserrat", "Inter", Arial, sans-serif;
+      --body: "Inter", Arial, sans-serif;
     }
 
     * {
       box-sizing: border-box;
+    }
+
+    svg.lucide,
+    i[data-lucide] {
+      display: inline-flex;
+      vertical-align: middle;
+      flex-shrink: 0;
+      align-self: center;
     }
 
     html {
@@ -43,13 +56,11 @@
 
     body {
       margin: 0;
-      width: 100%;
       min-width: 320px;
       overflow-x: hidden;
       background: var(--paper);
       color: var(--ink);
-      font-family: var(--font-body);
-      font-size: 16px;
+      font-family: var(--body);
       line-height: 1.5;
     }
 
@@ -57,11 +68,14 @@
       content: "";
       position: fixed;
       inset: 0;
-      z-index: -2;
+      z-index: -3;
       background:
-        linear-gradient(90deg, rgba(0, 109, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(0deg, rgba(0, 109, 255, 0.04) 1px, transparent 1px);
-      background-size: 46px 46px;
+        radial-gradient(circle at 9% 20%, rgba(0, 109, 255, 0.08), transparent 28%),
+        radial-gradient(circle at 88% 18%, rgba(255, 100, 0, 0.08), transparent 26%),
+        linear-gradient(90deg, rgba(0, 109, 255, 0.035) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(0, 109, 255, 0.035) 1px, transparent 1px);
+      background-size: auto, auto, 46px 46px, 46px 46px;
+      pointer-events: none;
     }
 
     a {
@@ -78,13 +92,13 @@
       font: inherit;
     }
 
-    section[id],
-    [id="hotmart"] {
-      scroll-margin-top: 104px;
+    img {
+      max-width: 100%;
+      display: block;
     }
 
-    .page {
-      overflow-x: hidden;
+    section[id] {
+      scroll-margin-top: 130px;
     }
 
     .container {
@@ -93,12 +107,14 @@
     }
 
     .site-header {
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 40;
-      background: rgba(254, 253, 254, 0.9);
-      border-bottom: 1px solid rgba(223, 231, 245, 0.9);
-      backdrop-filter: blur(16px);
+      left: 0;
+      right: 0;
+      z-index: 60;
+      border-bottom: 1px solid rgba(223, 232, 246, 0.8);
+      background: rgba(255, 255, 255, 0.86);
+      backdrop-filter: blur(18px);
     }
 
     .header-inner {
@@ -106,56 +122,25 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
     .brand {
       display: inline-flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
     }
 
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      background: var(--blue);
-      border-radius: var(--radius);
-      color: var(--white);
-      font-family: var(--font-display);
-      font-size: 33px;
-      font-weight: 900;
-      line-height: 1;
-      box-shadow: 0 12px 28px rgba(0, 109, 255, 0.25);
-      transform: skew(-4deg);
-    }
-
-    .brand-text {
-      display: grid;
-      gap: 0;
-    }
-
-    .brand-name {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 900;
-      line-height: 1;
-      color: var(--blue);
-    }
-
-    .brand-sub {
-      font-size: 11px;
-      font-weight: 800;
-      color: var(--blue-900);
-      text-transform: uppercase;
+    .brand img {
+      width: 168px;
+      height: auto;
+      filter: drop-shadow(0 4px 10px rgba(0, 109, 255, 0.12));
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: 6px;
     }
 
@@ -167,82 +152,66 @@
       border-radius: var(--radius);
       color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
-      transition: color 180ms ease, background 180ms ease;
+      font-weight: 800;
+      transition: background 180ms ease, color 180ms ease, transform 180ms ease;
     }
 
     .nav-links a:hover,
     .nav-links a:focus-visible {
-      background: var(--paper-soft);
-      color: var(--blue-700);
+      background: rgba(0, 109, 255, 0.08);
+      color: var(--blue);
+      transform: translateY(-1px);
       outline: none;
     }
 
     .button {
       position: relative;
-      overflow: hidden;
       min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
+      overflow: hidden;
       border: 0;
       border-radius: var(--radius);
       padding: 13px 20px;
       cursor: pointer;
-      font-weight: 800;
+      font-weight: 900;
       text-align: center;
-      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
     }
 
     .button svg,
-    .icon svg {
+    .icon-chip svg,
+    .mini-icon svg {
       width: 19px;
       height: 19px;
       flex: 0 0 auto;
     }
 
     .button-primary {
+      background: var(--orange);
+      color: var(--white);
+      box-shadow: 0 16px 34px rgba(255, 100, 0, 0.28);
+    }
+
+    .button-blue {
       background: var(--blue);
       color: var(--white);
-      box-shadow: 0 14px 34px rgba(0, 109, 255, 0.27);
-    }
-
-    .button-primary::after {
-      content: "";
-      position: absolute;
-      inset: -80% auto -80% -70%;
-      width: 48%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.48), transparent);
-      transform: rotate(18deg);
-      transition: left 520ms ease;
-      pointer-events: none;
-    }
-
-    .button-primary:hover,
-    .button-primary:focus-visible {
-      background: var(--blue-700);
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .button-primary:hover::after,
-    .button-primary:focus-visible::after {
-      left: 125%;
+      box-shadow: 0 16px 34px rgba(0, 109, 255, 0.25);
     }
 
     .button-light {
-      background: var(--white);
-      color: var(--blue-900);
-      border: 1px solid var(--line);
-      box-shadow: 0 12px 30px rgba(6, 24, 66, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.46);
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--blue-950);
+      box-shadow: 0 12px 28px rgba(6, 24, 66, 0.12);
     }
 
-    .button-light:hover,
-    .button-light:focus-visible {
-      color: var(--blue-700);
-      transform: translateY(-2px);
-      outline: none;
+    .button-outline {
+      border: 1px solid var(--line);
+      background: var(--white);
+      color: var(--blue-950);
     }
 
     .button-disabled,
@@ -253,369 +222,275 @@
       cursor: not-allowed;
     }
 
-    .button-disabled svg,
-    .button:disabled svg {
-      color: var(--orange);
-    }
-
-    .showcase {
-      position: relative;
-      min-height: min(820px, calc(100svh - 76px));
-      padding: clamp(78px, 9vw, 118px) 0 clamp(58px, 7vw, 84px);
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(254, 253, 254, 0.99) 0%, rgba(254, 253, 254, 0.92) 34%, rgba(254, 253, 254, 0.3) 62%, rgba(254, 253, 254, 0.06) 100%),
-        url("assets/estudaki-hero-principal.png") right center / cover no-repeat,
-        var(--paper);
-    }
-
-    .showcase::before {
+    .button::after {
       content: "";
       position: absolute;
-      inset: auto auto 52px -120px;
-      width: 340px;
-      height: 340px;
-      border-radius: 999px;
-      background: radial-gradient(circle, rgba(0, 151, 137, 0.18), transparent 68%);
+      top: -80%;
+      bottom: -80%;
+      left: -70%;
+      width: 44%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.58), transparent);
+      transform: rotate(18deg);
+      transition: left 560ms ease;
       pointer-events: none;
     }
 
-    .showcase::after {
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .button:hover::after,
+    .button:focus-visible::after {
+      left: 126%;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 94svh;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      padding: 144px 0 76px;
+      background:
+        linear-gradient(90deg, rgba(0, 67, 196, 0.94) 0%, rgba(0, 84, 216, 0.86) 29%, rgba(255, 255, 255, 0.42) 53%, rgba(255, 255, 255, 0.12) 100%),
+        url("assets/estudaki-hero-principal.png") right center / cover no-repeat,
+        var(--blue);
+      color: var(--white);
+      isolation: isolate;
+    }
+
+    .hero::before {
       content: "";
       position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      left: -9vw;
+      bottom: -11vw;
+      width: 50vw;
+      height: 22vw;
+      min-width: 520px;
+      min-height: 190px;
+      z-index: -1;
+      border-radius: 55% 45% 0 0;
+      background: var(--green);
+      transform: rotate(6deg);
+      box-shadow: 0 -18px 80px rgba(0, 151, 137, 0.28);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
       height: 8px;
-      background: linear-gradient(90deg, var(--blue), var(--green) 38%, var(--orange) 68%, var(--yellow));
+      background: linear-gradient(90deg, var(--green), var(--yellow), var(--orange), var(--blue));
     }
 
-    .showcase-inner {
-      min-width: 0;
-      min-height: min(640px, calc(100svh - 210px));
-      display: grid;
-      grid-template-columns: minmax(0, 620px);
-      align-items: center;
-      gap: 0;
-    }
-
-    .intro {
+    .hero-content {
+      max-width: 680px;
       position: relative;
-      z-index: 1;
+      z-index: 2;
+    }
+
+    .logo-lockup {
+      width: min(420px, 84vw);
+      margin-bottom: 34px;
+      filter: brightness(0) invert(1) drop-shadow(0 10px 20px rgba(0, 0, 0, 0.12));
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin: 0 0 18px;
-      color: var(--blue-700);
+      margin: 0 0 16px;
+      color: inherit;
       font-size: 13px;
       font-weight: 900;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 34px;
-      height: 4px;
+      width: 36px;
+      height: 5px;
+      border-radius: 999px;
       background: var(--yellow);
-      border-radius: 99px;
     }
 
     h1,
     h2,
-    h3,
-    .cover-title,
-    .cover-number {
-      font-family: var(--font-display);
-      line-height: 1.04;
+    h3 {
       margin: 0;
+      font-family: var(--display);
+      line-height: 1.02;
+      letter-spacing: 0;
     }
 
     h1 {
-      max-width: 780px;
-      color: var(--blue-900);
-      font-size: 62px;
+      max-width: 11ch;
+      font-size: clamp(3.4rem, 8vw, 7.4rem);
       font-weight: 900;
+      text-transform: uppercase;
       text-wrap: balance;
+      text-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
     }
 
-    .intro p {
-      min-width: 0;
-      max-width: 580px;
-      margin: 22px 0 0;
-      color: #31405f;
-      font-size: 18px;
+    .hero-accent {
+      color: var(--orange);
+      text-shadow: none;
     }
 
-    .action-row {
+    .hero-text {
+      max-width: 590px;
+      margin: 24px 0 0;
+      font-size: clamp(1.02rem, 2vw, 1.28rem);
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 30px;
+      margin-top: 32px;
     }
 
-    .trust-row {
+    .hero-badges {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-      max-width: 620px;
-      margin-top: 28px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+      max-width: 720px;
+      margin-top: 40px;
     }
 
-    .trust-item {
-      min-height: 72px;
+    .hero-badge {
+      min-height: 86px;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px;
+      gap: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      border-radius: var(--radius);
+      padding: 13px;
+      background: rgba(255, 255, 255, 0.10);
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      backdrop-filter: blur(14px);
+      transform: translateZ(0);
+    }
+
+    .hero-badge strong {
+      display: block;
+      color: var(--white);
+      font-size: 14px;
+      line-height: 1.14;
+    }
+
+    .hero-badge span {
+      display: block;
+      margin-top: 2px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .icon-chip {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, 0.14);
+      color: var(--white);
+    }
+
+    .hero-side-note {
+      position: absolute;
+      right: max(24px, calc((100vw - 1180px) / 2));
+      bottom: 48px;
+      width: min(330px, 26vw);
+      border-radius: var(--radius);
+      padding: 16px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--blue-950);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-side-note strong {
+      display: block;
+      font-family: var(--display);
+      font-size: 22px;
+      line-height: 1.05;
+    }
+
+    .hero-side-note p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .product-strip {
+      position: relative;
+      z-index: 5;
+      margin-top: -34px;
+    }
+
+    .strip-inner {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .strip-card {
+      min-height: 94px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.86);
-      color: var(--blue-900);
-      font-size: 13px;
-      font-weight: 800;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 12px 26px rgba(6, 24, 66, 0.08);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--blue-950);
+      box-shadow: var(--shadow-soft);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
     }
 
-    .trust-item .icon {
-      width: 34px;
-      height: 34px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      background: var(--paper-soft);
-      color: var(--blue);
-      flex: 0 0 auto;
-    }
-
-    .hero-display {
-      position: relative;
-      min-width: 0;
-      min-height: 520px;
-      display: none;
-      place-items: center;
-    }
-
-    .hero-display::before {
-      content: "&";
-      position: absolute;
-      inset: auto 0 20px auto;
-      color: rgba(0, 109, 255, 0.08);
-      font-family: var(--font-display);
-      font-size: 360px;
-      font-weight: 900;
-      line-height: 0.72;
-      z-index: 0;
-    }
-
-    .cover-stage {
-      position: relative;
-      z-index: 1;
-      width: min(100%, 610px);
-      min-height: 440px;
-    }
-
-    .pdf-cover {
-      position: relative;
-      overflow: hidden;
-      border-radius: var(--radius);
-      background: var(--white);
-      color: var(--blue-900);
-      border: 1px solid rgba(6, 24, 66, 0.08);
+    .strip-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 109, 255, 0.35);
       box-shadow: var(--shadow);
-      isolation: isolate;
     }
 
-    .hero-cover {
-      position: absolute;
-      width: 275px;
-      aspect-ratio: 0.72;
-      padding: 22px;
-      transform-origin: center;
-    }
-
-    .hero-cover.primary {
-      right: 60px;
-      top: 14px;
-      z-index: 3;
-      transform: rotate(2deg);
-    }
-
-    .hero-cover.secondary {
-      left: 72px;
-      top: 72px;
-      z-index: 2;
-      transform: rotate(-9deg);
-    }
-
-    .hero-cover.tertiary {
-      right: 0;
-      bottom: 8px;
-      z-index: 1;
-      transform: rotate(8deg);
-    }
-
-    .pdf-cover::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -2;
-      background:
-        linear-gradient(135deg, rgba(0, 109, 255, 0.12) 0 22%, transparent 22% 100%),
-        linear-gradient(315deg, rgba(54, 184, 111, 0.18) 0 18%, transparent 18% 100%);
-    }
-
-    .pdf-cover::after {
-      content: "";
-      position: absolute;
-      inset: auto -20% 0 -20%;
-      height: 22%;
-      z-index: -1;
-      background: var(--blue);
-      transform: skewY(-6deg);
-      transform-origin: left;
-    }
-
-    .cover-kicker {
-      display: inline-flex;
-      align-items: center;
-      min-height: 28px;
-      padding: 4px 9px;
-      border-radius: 6px;
-      background: var(--yellow);
-      color: var(--blue-900);
-      font-size: 12px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .cover-title {
-      margin-top: 14px;
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--blue);
-      text-transform: uppercase;
-    }
-
-    .cover-number {
-      margin-top: 8px;
-      font-size: 58px;
-      font-weight: 900;
-      color: var(--blue-900);
-    }
-
-    .cover-subtitle {
-      margin-top: 10px;
-      color: var(--blue-900);
-      font-size: 13px;
-      font-weight: 900;
-      text-transform: uppercase;
-    }
-
-    .cover-badge {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      display: grid;
-      place-items: center;
+    .strip-card img {
       width: 58px;
-      height: 58px;
-      border-radius: var(--radius);
-      background: var(--green);
-      color: var(--white);
-      font-family: var(--font-display);
+      height: 76px;
+      border-radius: 6px;
+      object-fit: cover;
+      box-shadow: 0 12px 20px rgba(6, 24, 66, 0.16);
+    }
+
+    .strip-card small {
+      display: inline-flex;
+      margin-bottom: 4px;
+      color: var(--orange);
       font-size: 11px;
       font-weight: 900;
-      line-height: 1.05;
-      padding: 0 6px;
-      text-align: center;
-      box-shadow: 0 12px 24px rgba(54, 184, 111, 0.24);
+      text-transform: uppercase;
     }
 
-    .cover-lines {
-      position: absolute;
-      left: 20px;
-      right: 86px;
-      bottom: 26px;
-      display: grid;
-      gap: 7px;
+    .strip-card strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.15;
     }
 
-    .cover-lines span {
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.86);
-    }
-
-    .cover-lines span:nth-child(2) {
-      width: 74%;
-      background: rgba(240, 220, 70, 0.95);
-    }
-
-    .cover-lines span:nth-child(3) {
-      width: 52%;
-      background: rgba(255, 100, 0, 0.9);
-    }
-
-    .cover-enem .cover-title {
-      color: var(--blue);
-      font-size: 48px;
-    }
-
-    .cover-enem .cover-kicker {
-      background: var(--yellow);
-    }
-
-    .cover-enem::after {
-      background: var(--blue);
-    }
-
-    .cover-plan .cover-title {
-      color: var(--yellow);
-      text-shadow: 0 3px 0 rgba(6, 24, 66, 0.12);
-    }
-
-    .cover-plan .cover-kicker {
-      background: var(--orange);
-      color: var(--white);
-    }
-
-    .cover-plan::before {
-      background:
-        linear-gradient(135deg, rgba(240, 220, 70, 0.28) 0 25%, transparent 25%),
-        linear-gradient(315deg, rgba(0, 109, 255, 0.2) 0 20%, transparent 20%);
-    }
-
-    .cover-plan::after {
-      background: var(--blue-900);
-    }
-
-    .cover-etec .cover-title {
-      color: var(--blue-900);
-    }
-
-    .cover-etec .cover-kicker {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    .cover-etec::after {
-      background: var(--orange);
-    }
-
-    .catalog-section,
-    .feature-section,
-    .process-section,
-    .faq-section {
-      padding: 76px 0;
+    .section {
+      padding: 84px 0;
     }
 
     .section-head {
       display: grid;
-      grid-template-columns: minmax(0, 0.92fr) minmax(280px, 0.52fr);
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.54fr);
       align-items: end;
       gap: 28px;
       margin-bottom: 34px;
@@ -624,27 +499,30 @@
     .section-head.center {
       display: block;
       max-width: 780px;
-      margin: 0 auto 34px;
+      margin: 0 auto 40px;
       text-align: center;
     }
 
     .section-head .eyebrow {
-      margin-bottom: 12px;
+      color: var(--blue);
     }
 
     h2 {
-      color: var(--blue-900);
-      font-size: 42px;
+      color: var(--blue-950);
+      font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 900;
+      text-transform: uppercase;
+      text-wrap: balance;
     }
 
     .section-head p {
       margin: 0;
       color: var(--muted);
       font-size: 17px;
+      font-weight: 600;
     }
 
-    .filter-bar {
+    .filters {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
@@ -656,15 +534,15 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      padding: 9px 14px;
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      padding: 9px 14px;
       background: var(--white);
       color: var(--muted);
       cursor: pointer;
       font-size: 14px;
-      font-weight: 800;
-      transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+      font-weight: 900;
+      transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
     }
 
     .filter-button svg {
@@ -672,142 +550,115 @@
       height: 17px;
     }
 
-    .filter-button.is-active,
     .filter-button:hover,
-    .filter-button:focus-visible {
+    .filter-button:focus-visible,
+    .filter-button.is-active {
       border-color: var(--blue);
       background: var(--blue);
       color: var(--white);
+      transform: translateY(-1px);
       outline: none;
     }
 
-    .product-grid {
+    .catalog-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
     }
 
     .product-card {
       display: flex;
       min-width: 0;
       flex-direction: column;
+      overflow: hidden;
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.92);
-      box-shadow: 0 18px 46px rgba(6, 24, 66, 0.08);
-      overflow: hidden;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow-soft);
       transform: translateZ(0);
-      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+      transition: transform 240ms ease, box-shadow 240ms ease, border-color 240ms ease;
     }
 
     .product-card:hover,
     .product-card:focus-within {
-      transform: translateY(-4px);
-      border-color: rgba(0, 109, 255, 0.4);
-      box-shadow: 0 24px 58px rgba(6, 24, 66, 0.13);
+      transform: translateY(-6px);
+      border-color: rgba(0, 109, 255, 0.42);
+      box-shadow: var(--shadow);
     }
 
-    .product-visual {
+    .product-media {
       position: relative;
+      min-height: 390px;
+      display: grid;
+      place-items: center;
       overflow: hidden;
-      padding: 18px;
+      padding: 24px;
       background:
-        radial-gradient(circle at 18% 20%, rgba(240, 220, 70, 0.32), transparent 34%),
-        radial-gradient(circle at 86% 12%, rgba(54, 184, 111, 0.22), transparent 30%),
-        linear-gradient(180deg, rgba(245, 248, 255, 0.95), rgba(255, 255, 255, 0.9));
-      border-bottom: 1px solid var(--line);
+        radial-gradient(circle at 18% 14%, rgba(255, 196, 0, 0.28), transparent 28%),
+        radial-gradient(circle at 84% 18%, rgba(0, 151, 137, 0.18), transparent 30%),
+        linear-gradient(180deg, #ffffff, #eef5ff);
     }
 
-    .product-visual::before {
+    .product-media::before {
       content: "";
       position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(0, 109, 255, 0.12);
+      inset: 16px;
+      border: 1px dashed rgba(0, 109, 255, 0.18);
       border-radius: var(--radius);
       pointer-events: none;
     }
 
-    .mini-cover {
-      width: 100%;
-      aspect-ratio: 0.74;
-      padding: 16px;
-      box-shadow: 0 14px 34px rgba(6, 24, 66, 0.16);
-      transform: perspective(900px) rotateY(-6deg) rotateX(2deg);
-      transition: transform 260ms ease, box-shadow 260ms ease;
-    }
-
-    .product-cover-image {
+    .product-media img {
       position: relative;
       z-index: 1;
-      width: 100%;
-      aspect-ratio: 0.67;
-      display: block;
-      border-radius: var(--radius);
+      width: min(76%, 290px);
+      aspect-ratio: 0.68;
       object-fit: cover;
       object-position: center top;
-      box-shadow: 0 14px 34px rgba(6, 24, 66, 0.18);
-      transform: perspective(900px) rotateY(-6deg) rotateX(2deg);
+      border-radius: var(--radius);
+      box-shadow: 0 24px 42px rgba(6, 24, 66, 0.20);
+      transform: perspective(1000px) rotateY(-7deg) rotateX(2deg);
       transition: transform 260ms ease, box-shadow 260ms ease;
     }
 
-    .product-card:hover .mini-cover,
-    .product-card:focus-within .mini-cover,
-    .product-card:hover .product-cover-image,
-    .product-card:focus-within .product-cover-image {
-      transform: perspective(900px) rotateY(0deg) rotateX(0deg) translateY(-3px);
-      box-shadow: 0 20px 42px rgba(6, 24, 66, 0.22);
+    .product-card:hover .product-media img,
+    .product-card:focus-within .product-media img {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-4px);
+      box-shadow: 0 30px 56px rgba(6, 24, 66, 0.24);
     }
 
-    .mini-cover .cover-kicker {
-      min-height: 24px;
-      font-size: 10px;
-      padding: 3px 7px;
-    }
-
-    .mini-cover .cover-title {
-      margin-top: 10px;
-      font-size: 31px;
-    }
-
-    .mini-cover.cover-enem .cover-title {
-      font-size: 38px;
-    }
-
-    .mini-cover .cover-number {
-      font-size: 42px;
-    }
-
-    .mini-cover .cover-subtitle {
-      font-size: 11px;
-    }
-
-    .mini-cover .cover-badge {
-      right: 14px;
-      bottom: 14px;
-      width: 48px;
-      height: 48px;
+    .status-pill {
+      position: absolute;
+      left: 18px;
+      top: 18px;
+      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      min-height: 32px;
+      border-radius: var(--radius);
+      padding: 6px 10px;
+      background: var(--orange);
+      color: var(--white);
       font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      box-shadow: 0 14px 26px rgba(255, 100, 0, 0.24);
     }
 
-    .mini-cover .cover-lines {
-      left: 16px;
-      right: 72px;
-      bottom: 22px;
-      gap: 5px;
-    }
-
-    .mini-cover .cover-lines span {
-      height: 6px;
+    .status-pill.soon {
+      background: var(--blue);
+      box-shadow: 0 14px 26px rgba(0, 109, 255, 0.22);
     }
 
     .product-body {
       display: flex;
       flex: 1;
       flex-direction: column;
-      padding: 18px;
+      padding: 20px;
     }
 
-    .product-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 6px;
@@ -815,35 +666,30 @@
     }
 
     .tag {
+      min-height: 24px;
       display: inline-flex;
       align-items: center;
-      min-height: 24px;
       border-radius: 6px;
       padding: 3px 8px;
-      background: var(--paper-soft);
-      color: var(--blue-700);
+      background: rgba(0, 109, 255, 0.10);
+      color: var(--blue);
       font-size: 12px;
       font-weight: 900;
     }
 
-    .tag.green {
-      background: rgba(54, 184, 111, 0.12);
-      color: #187946;
-    }
-
     .tag.orange {
       background: rgba(255, 100, 0, 0.12);
-      color: #a03e00;
+      color: #b24500;
     }
 
-    .tag.yellow {
-      background: rgba(240, 220, 70, 0.28);
-      color: #756706;
+    .tag.green {
+      background: rgba(0, 151, 137, 0.12);
+      color: #08796e;
     }
 
     .product-card h3 {
-      color: var(--blue-900);
-      font-size: 22px;
+      color: var(--blue-950);
+      font-size: 23px;
       font-weight: 900;
       line-height: 1.12;
     }
@@ -852,31 +698,31 @@
       margin: 10px 0 0;
       color: var(--muted);
       font-size: 14px;
+      font-weight: 600;
     }
 
-    .product-list {
+    .check-list {
       display: grid;
-      gap: 8px;
-      margin: 16px 0 18px;
+      gap: 9px;
+      margin: 18px 0;
       padding: 0;
       list-style: none;
-      color: var(--blue-900);
+      color: var(--blue-950);
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .product-list li {
+    .check-list li {
       display: flex;
-      gap: 8px;
       align-items: flex-start;
+      gap: 8px;
     }
 
-    .product-list svg {
+    .check-list svg {
       width: 16px;
       height: 16px;
-      margin-top: 2px;
       flex: 0 0 auto;
-      color: var(--green);
+      color: var(--green-2);
     }
 
     .product-actions {
@@ -886,291 +732,456 @@
       margin-top: auto;
     }
 
-    .product-actions .button {
-      min-height: 46px;
-      padding: 11px 14px;
-      font-size: 14px;
+    .price-tag {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 8px;
+      margin: 4px 0 2px;
+      padding: 10px 12px;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, rgba(255, 100, 0, 0.10), rgba(255, 196, 0, 0.12));
+      border: 1px dashed rgba(255, 100, 0, 0.35);
     }
 
-    .text-link {
-      min-height: 42px;
+    .price-tag .old {
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      text-decoration: line-through;
+      text-decoration-thickness: 2px;
+    }
+
+    .price-tag .new {
+      color: var(--orange);
+      font-family: var(--display);
+      font-size: 28px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .price-tag .label {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--green-2);
+      color: var(--white);
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      transform: translateY(-2px);
+    }
+
+    .promo-ribbon {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+      z-index: 2;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      color: var(--blue-700);
-      font-size: 14px;
+      gap: 6px;
+      min-height: 30px;
+      border-radius: 999px;
+      padding: 5px 12px;
+      background: var(--yellow);
+      color: var(--blue-950);
+      font-size: 11px;
       font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 22px rgba(255, 196, 0, 0.28);
     }
 
-    .feature-section {
-      background: var(--blue-900);
-      color: var(--white);
-    }
-
-    .feature-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.86fr) minmax(420px, 1fr);
+    .best-seller {
+      position: absolute;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2;
+      display: inline-flex;
       align-items: center;
-      gap: 42px;
+      gap: 6px;
+      min-height: 30px;
+      border-radius: 999px;
+      padding: 5px 12px;
+      background: var(--blue-950);
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      box-shadow: 0 12px 22px rgba(6, 24, 66, 0.28);
     }
 
-    .feature-section h2,
-    .feature-section .eyebrow {
-      color: var(--white);
+    .book-stack {
+      position: relative;
+      width: min(82%, 320px);
+      aspect-ratio: 0.72;
+      perspective: 1400px;
+      transform-style: preserve-3d;
+      z-index: 1;
     }
 
-    .feature-section .eyebrow::before {
-      background: var(--orange);
+    .book-stack .book {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      border-radius: 10px;
+      box-shadow:
+        0 22px 36px rgba(6, 24, 66, 0.32),
+        0 6px 14px rgba(6, 24, 66, 0.18),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.22);
+      transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 520ms ease;
+      will-change: transform;
     }
 
-    .feature-copy p {
+    .book-stack .book-1 {
+      transform: translateX(-46%) translateY(6%) rotateY(18deg) rotateZ(-9deg) scale(0.92);
+      z-index: 1;
+      animation: floatBook1 6s ease-in-out infinite;
+    }
+
+    .book-stack .book-2 {
+      transform: translateX(46%) translateY(6%) rotateY(-18deg) rotateZ(9deg) scale(0.92);
+      z-index: 2;
+      animation: floatBook2 6.6s ease-in-out infinite;
+    }
+
+    .book-stack .book-cover {
+      transform: translateY(-4%) scale(0.96);
+      z-index: 3;
+      animation: floatBookCover 5.2s ease-in-out infinite;
+    }
+
+    .offer-card:hover .book-stack .book-1 {
+      transform: translateX(-62%) translateY(4%) rotateY(24deg) rotateZ(-13deg) scale(0.92);
+    }
+
+    .offer-card:hover .book-stack .book-2 {
+      transform: translateX(62%) translateY(4%) rotateY(-24deg) rotateZ(13deg) scale(0.92);
+    }
+
+    .offer-card:hover .book-stack .book-cover {
+      transform: translateY(-8%) scale(1);
+      box-shadow:
+        0 34px 60px rgba(6, 24, 66, 0.42),
+        0 10px 22px rgba(6, 24, 66, 0.24),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.28);
+    }
+
+    .stack-badge {
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 4;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(6, 24, 66, 0.92);
+      color: var(--yellow);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      box-shadow: 0 10px 20px rgba(6, 24, 66, 0.34);
+      backdrop-filter: blur(6px);
+    }
+
+    .sparkle {
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #fff7d6 0%, #ffc400 60%, transparent 70%);
+      box-shadow: 0 0 16px rgba(255, 196, 0, 0.95);
+      pointer-events: none;
+      z-index: 3;
+      animation: sparklePulse 3.4s ease-in-out infinite;
+    }
+
+    .sparkle.s1 { top: 18%; left: 14%; animation-delay: 0s; }
+    .sparkle.s2 { top: 70%; left: 10%; width: 10px; height: 10px; animation-delay: 0.8s; }
+    .sparkle.s3 { top: 26%; right: 12%; width: 12px; height: 12px; animation-delay: 1.4s; }
+    .sparkle.s4 { top: 72%; right: 16%; width: 10px; height: 10px; animation-delay: 2.1s; }
+
+    .offer-card .book-stack {
+      position: absolute;
+      right: -4%;
+      bottom: 4%;
+      width: 70%;
+      max-width: 560px;
+      z-index: 2;
+    }
+
+    .offer-card .book-shadow {
+      position: absolute;
+      left: 50%;
+      top: 78%;
+      width: 60%;
+      height: 28px;
+      transform: translateX(-50%);
+      background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.45), transparent 70%);
+      filter: blur(10px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    @keyframes floatBook1 {
+      0%, 100% { transform: translateX(-46%) translateY(6%) rotateY(18deg) rotateZ(-9deg) scale(0.92); }
+      50% { transform: translateX(-46%) translateY(-1%) rotateY(18deg) rotateZ(-9deg) scale(0.92); }
+    }
+
+    @keyframes floatBook2 {
+      0%, 100% { transform: translateX(46%) translateY(6%) rotateY(-18deg) rotateZ(9deg) scale(0.92); }
+      50% { transform: translateX(46%) translateY(0%) rotateY(-18deg) rotateZ(9deg) scale(0.92); }
+    }
+
+    @keyframes floatBookCover {
+      0%, 100% { transform: translateY(-4%) scale(0.96); }
+      50% { transform: translateY(-10%) scale(0.96); }
+    }
+
+    @keyframes sparklePulse {
+      0%, 100% { opacity: 0; transform: scale(0.6); }
+      50% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .split-section {
+      display: grid;
+      grid-template-columns: minmax(0, 0.92fr) minmax(320px, 1.08fr);
+      align-items: center;
+      gap: 44px;
+    }
+
+    .text-panel p {
+      max-width: 570px;
       margin: 18px 0 0;
-      color: rgba(255, 255, 255, 0.74);
+      color: var(--muted);
       font-size: 17px;
+      font-weight: 600;
     }
 
     .feature-list {
       display: grid;
-      gap: 14px;
+      gap: 12px;
       margin-top: 28px;
     }
 
-    .feature-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
+    .feature-row {
+      display: flex;
+      align-items: flex-start;
       gap: 12px;
-      align-items: start;
-      padding: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: var(--radius);
-      background: rgba(255, 255, 255, 0.06);
-    }
-
-    .feature-item .icon {
-      width: 42px;
-      height: 42px;
-      display: grid;
-      place-items: center;
-      border-radius: var(--radius);
-      background: var(--yellow);
-      color: var(--blue-900);
-    }
-
-    .feature-item strong {
-      display: block;
-      margin-bottom: 3px;
-      font-size: 15px;
-    }
-
-    .feature-item span {
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 14px;
-    }
-
-    .bundle-panel {
-      position: relative;
-      min-height: 460px;
-      border-radius: var(--radius);
-      overflow: hidden;
-      isolation: isolate;
-      background: var(--blue-900);
-      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.26);
-    }
-
-    .bundle-panel::before {
-      content: "";
-      position: absolute;
-      inset: 22px;
-      z-index: 3;
-      border: 2px solid rgba(255, 255, 255, 0.48);
-      border-radius: var(--radius);
-      pointer-events: none;
-    }
-
-    .bundle-panel::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      background:
-        linear-gradient(90deg, rgba(6, 24, 66, 0.9) 0%, rgba(6, 24, 66, 0.7) 42%, rgba(6, 24, 66, 0.12) 100%),
-        linear-gradient(0deg, rgba(0, 109, 255, 0.18), transparent 45%);
-      pointer-events: none;
-    }
-
-    .bundle-mockup {
-      position: absolute;
-      inset: 0 0 0 auto;
-      z-index: 0;
-      width: 78%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-      filter: saturate(1.06) contrast(1.02);
-      transform: scale(1.03);
-    }
-
-    .bundle-cover-stack {
-      position: absolute;
-      inset: 36px 18px 34px auto;
-      z-index: 0;
-      width: min(62%, 430px);
-      pointer-events: none;
-    }
-
-    .bundle-cover-image {
-      position: absolute;
-      width: min(46%, 190px);
-      aspect-ratio: 0.62;
-      border-radius: var(--radius);
-      object-fit: cover;
-      object-position: center top;
-      box-shadow: 0 26px 48px rgba(0, 0, 0, 0.32);
-      transform-origin: center;
-    }
-
-    .bundle-cover-image.primary {
-      right: 108px;
-      top: 34px;
-      z-index: 3;
-      width: min(50%, 210px);
-      transform: rotate(-3deg);
-    }
-
-    .bundle-cover-image.secondary {
-      right: 242px;
-      top: 84px;
-      z-index: 2;
-      transform: rotate(-12deg);
-    }
-
-    .bundle-cover-image.tertiary {
-      right: 0;
-      top: 96px;
-      z-index: 1;
-      transform: rotate(9deg);
-    }
-
-    .bundle-content {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      min-height: 460px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 34px;
-    }
-
-    .bundle-content h3 {
-      max-width: 420px;
-      color: var(--white);
-      font-size: 42px;
-      font-weight: 900;
-      text-wrap: balance;
-    }
-
-    .bundle-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 18px;
-    }
-
-    .bundle-chips span {
-      min-height: 34px;
-      display: inline-flex;
-      align-items: center;
-      border-radius: 6px;
-      padding: 6px 10px;
-      background: rgba(255, 255, 255, 0.9);
-      color: var(--blue-900);
-      font-size: 13px;
-      font-weight: 900;
-    }
-
-    .bundle-bottom {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding-top: 32px;
-    }
-
-    .bundle-price {
-      color: var(--white);
-    }
-
-    .bundle-price small {
-      display: block;
-      color: rgba(255, 255, 255, 0.72);
-      font-weight: 700;
-    }
-
-    .bundle-price strong {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 34px;
-      line-height: 1;
-    }
-
-    .process-section {
-      background: var(--paper-soft);
-    }
-
-    .process-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .process-card {
-      min-height: 240px;
-      padding: 24px;
-      border-radius: var(--radius);
-      background: var(--white);
       border: 1px solid var(--line);
-      box-shadow: 0 18px 46px rgba(6, 24, 66, 0.08);
+      border-radius: var(--radius);
+      padding: 14px;
+      background: rgba(255, 255, 255, 0.88);
+      box-shadow: 0 12px 30px rgba(6, 24, 66, 0.06);
+      transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
     }
 
-    .process-number {
+    .feature-row:hover {
+      transform: translateY(-3px);
+      border-color: rgba(0, 109, 255, 0.32);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .mini-icon {
       width: 44px;
       height: 44px;
       display: grid;
       place-items: center;
+      flex: 0 0 auto;
       border-radius: var(--radius);
       background: var(--blue);
       color: var(--white);
-      font-family: var(--font-display);
-      font-weight: 900;
+      box-shadow: 0 14px 28px rgba(0, 109, 255, 0.22);
     }
 
-    .process-card:nth-child(2) .process-number {
+    .feature-row:nth-child(2) .mini-icon {
       background: var(--orange);
+      box-shadow: 0 14px 28px rgba(255, 100, 0, 0.22);
     }
 
-    .process-card:nth-child(3) .process-number {
+    .feature-row:nth-child(3) .mini-icon {
       background: var(--green);
+      box-shadow: 0 14px 28px rgba(0, 151, 137, 0.22);
     }
 
-    .process-card h3 {
-      margin-top: 20px;
-      color: var(--blue-900);
+    .feature-row strong {
+      display: block;
+      color: var(--blue-950);
+      font-size: 15px;
+      line-height: 1.2;
+    }
+
+    .feature-row span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .offer-card {
+      position: relative;
+      min-height: 600px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(145deg, rgba(0, 109, 255, 0.95), rgba(0, 75, 196, 0.95)),
+        var(--blue);
+      color: var(--white);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+
+    .offer-card::before {
+      content: "";
+      position: absolute;
+      right: -170px;
+      top: -130px;
+      width: 420px;
+      height: 420px;
+      border-radius: 999px;
+      background: var(--orange);
+      z-index: -1;
+    }
+
+    .offer-card::after {
+      content: "";
+      position: absolute;
+      left: -90px;
+      bottom: -120px;
+      width: 440px;
+      height: 280px;
+      border-radius: 50%;
+      background: var(--green);
+      z-index: -1;
+      transform: rotate(8deg);
+    }
+
+    .offer-card > img {
+      position: absolute;
+      right: -8%;
+      bottom: 4%;
+      width: 82%;
+      max-width: 650px;
+      filter: drop-shadow(0 30px 42px rgba(0, 0, 0, 0.24));
+      animation: floatProduct 6s ease-in-out infinite;
+    }
+
+    .offer-content {
+      position: relative;
+      z-index: 2;
+      width: min(430px, 78%);
+      padding: 32px;
+    }
+
+    .offer-content h3 {
+      margin-top: 14px;
+      color: var(--white);
+      font-size: clamp(2.1rem, 5vw, 4rem);
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .offer-content p {
+      margin: 14px 0 0;
+      color: rgba(255, 255, 255, 0.84);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
+    .price-box {
+      display: inline-grid;
+      gap: 2px;
+      margin-top: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: var(--radius);
+      padding: 12px 14px;
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+    }
+
+    .price-box span {
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .price-box strong {
+      color: var(--white);
+      font-family: var(--display);
+      font-size: 34px;
+      line-height: 1;
+    }
+
+    .offer-content .button {
+      margin-top: 18px;
+    }
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .step-card {
+      min-height: 238px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 22px;
+      background: var(--white);
+      box-shadow: var(--shadow-soft);
+      transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease;
+    }
+
+    .step-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 109, 255, 0.34);
+      box-shadow: var(--shadow);
+    }
+
+    .step-number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius);
+      background: var(--yellow);
+      color: var(--blue-950);
+      font-family: var(--display);
       font-size: 22px;
       font-weight: 900;
+      box-shadow: 0 14px 28px rgba(255, 196, 0, 0.20);
     }
 
-    .process-card p {
+    .step-card h3 {
+      margin-top: 18px;
+      color: var(--blue-950);
+      font-size: 23px;
+      font-weight: 900;
+    }
+
+    .step-card p {
       margin: 10px 0 0;
       color: var(--muted);
-      font-size: 15px;
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .faq-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1fr);
-      gap: 42px;
+      grid-template-columns: minmax(0, 0.72fr) minmax(320px, 1fr);
+      gap: 40px;
       align-items: start;
     }
 
@@ -1183,38 +1194,33 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       background: var(--white);
-      box-shadow: 0 12px 30px rgba(6, 24, 66, 0.06);
+      box-shadow: 0 12px 28px rgba(6, 24, 66, 0.06);
+      overflow: hidden;
     }
 
     summary {
+      min-height: 58px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
-      min-height: 64px;
-      padding: 18px 20px;
+      gap: 18px;
+      padding: 16px 18px;
       cursor: pointer;
-      color: var(--blue-900);
+      color: var(--blue-950);
       font-weight: 900;
-      list-style: none;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
     }
 
     summary::after {
       content: "+";
-      width: 30px;
-      height: 30px;
+      width: 28px;
+      height: 28px;
       display: grid;
       place-items: center;
-      border-radius: var(--radius);
-      background: var(--paper-soft);
-      color: var(--blue);
       flex: 0 0 auto;
-      font-size: 20px;
-      line-height: 1;
+      border-radius: 6px;
+      background: rgba(0, 109, 255, 0.10);
+      color: var(--blue);
+      font-weight: 900;
     }
 
     details[open] summary::after {
@@ -1225,38 +1231,69 @@
 
     details p {
       margin: 0;
-      padding: 0 20px 20px;
+      padding: 0 18px 18px;
       color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
     }
 
     .cta-band {
-      padding: 74px 0;
-      background: var(--blue);
-      color: var(--white);
+      padding: 0 0 84px;
     }
 
     .cta-box {
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
       align-items: center;
-    }
-
-    .cta-band h2 {
+      gap: 26px;
+      border-radius: var(--radius);
+      padding: 34px;
+      background:
+        linear-gradient(135deg, rgba(0, 109, 255, 0.97), rgba(0, 75, 196, 0.98)),
+        var(--blue);
       color: var(--white);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
     }
 
-    .cta-band p {
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      right: -70px;
+      bottom: -90px;
+      width: 270px;
+      height: 220px;
+      border-radius: 50%;
+      background: var(--orange);
+    }
+
+    .cta-box h2 {
+      position: relative;
+      z-index: 1;
+      color: var(--white);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+    }
+
+    .cta-box p {
+      position: relative;
+      z-index: 1;
       max-width: 720px;
-      margin: 14px 0 0;
-      color: rgba(255, 255, 255, 0.78);
-      font-size: 17px;
+      margin: 10px 0 0;
+      color: rgba(255, 255, 255, 0.82);
+      font-weight: 700;
+    }
+
+    .cta-box .button {
+      position: relative;
+      z-index: 1;
+      min-width: 250px;
     }
 
     .site-footer {
-      padding: 34px 0;
-      background: var(--blue-900);
-      color: rgba(255, 255, 255, 0.76);
+      border-top: 1px solid var(--line);
+      background: var(--white);
+      padding: 28px 0;
     }
 
     .footer-inner {
@@ -1264,770 +1301,1259 @@
       align-items: center;
       justify-content: space-between;
       gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .site-footer .brand-name,
-    .site-footer .brand-sub {
-      color: var(--white);
-    }
-
-    .site-footer .brand-mark {
-      background: var(--white);
-      color: var(--blue);
-      box-shadow: none;
     }
 
     .footer-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      justify-content: flex-end;
+      gap: 16px;
+      color: var(--muted);
       font-size: 14px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .footer-links a:hover,
-    .footer-links a:focus-visible {
-      color: var(--white);
-      outline: none;
+    .floating-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 50;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 240ms ease, opacity 240ms ease;
     }
 
-    @keyframes fade-lift {
-      from {
-        opacity: 1;
-        transform: translateY(18px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .floating-cta.is-visible {
+      transform: translateY(0);
+      opacity: 1;
     }
 
-    @keyframes float-soft {
-      0%,
-      100% {
-        transform: translateY(0) scale(1.03);
-      }
-      50% {
-        transform: translateY(-8px) scale(1.03);
-      }
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 560ms ease, transform 560ms ease;
+      transition-delay: var(--delay, 0ms);
     }
 
-    @keyframes glow-drift {
-      0%,
-      100% {
-        transform: translate3d(0, 0, 0) scale(1);
-      }
-      50% {
-        transform: translate3d(28px, -16px, 0) scale(1.08);
-      }
-    }
-
-    @media (prefers-reduced-motion: no-preference) {
-      .showcase::before {
-        animation: glow-drift 8s ease-in-out infinite;
-      }
-
-      .intro .eyebrow,
-      .intro h1,
-      .intro > p,
-      .action-row,
-      .trust-row {
-        animation: fade-lift 720ms ease both;
-      }
-
-      .intro h1 {
-        animation-delay: 80ms;
-      }
-
-      .intro > p {
-        animation-delay: 150ms;
-      }
-
-      .action-row {
-        animation-delay: 220ms;
-      }
-
-      .trust-row {
-        animation-delay: 300ms;
-      }
-
-      .bundle-mockup,
-      .bundle-cover-stack {
-        animation: float-soft 6s ease-in-out infinite;
-      }
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(24px);
-        transition: opacity 520ms ease var(--reveal-delay, 0ms), transform 520ms ease var(--reveal-delay, 0ms);
-      }
-
-      .reveal.is-visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *,
-      *::before,
-      *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.001ms !important;
-      }
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     .is-hidden {
       display: none;
     }
 
-    @media (max-width: 1120px) {
-      .showcase-inner,
-      .feature-grid,
-      .faq-grid {
-        grid-template-columns: 1fr;
-      }
+    /* =========================================
+       PROMO BAR FIXA + CONTADOR (compacta, horizontal)
+    ========================================= */
+    .promo-bar {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      right: 0;
+      z-index: 58;
+      margin-top: 0;
+      padding: 7px 16px;
+      background: linear-gradient(90deg, var(--orange), #ff8a3d, var(--orange));
+      color: var(--white);
+      box-shadow: 0 10px 26px rgba(255, 100, 0, 0.28);
+      white-space: nowrap;
+    }
 
-      .hero-display {
-        min-height: 520px;
-      }
+    .promo-bar-inner {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: nowrap;
+      gap: 12px;
+      text-align: center;
+    }
 
-      .cover-stage {
-        width: min(100%, 720px);
-      }
+    .promo-launch {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #ffffff;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
 
-      .product-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+    .promo-launch svg {
+      width: 17px;
+      height: 17px;
+      flex: 0 0 auto;
+      color: #ffffff;
+      stroke: #ffffff;
+      stroke-width: 2.4;
+    }
+
+    .promo-launch-short { display: none; }
+
+    .promo-offer-text {
+      color: rgba(255, 255, 255, 0.94);
+      font-size: 13px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .promo-countdown {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space: nowrap;
+    }
+
+    #promoCountdown,
+    .promo-countdown strong {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      min-width: 72px;
+      padding: 4px 10px;
+      border-radius: 10px;
+
+      background: #ffc400;
+      color: #061842;
+
+      font-family: var(--display);
+      font-size: 20px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: 0.02em;
+
+      box-shadow: 0 3px 10px rgba(6, 24, 66, 0.22);
+      text-shadow: none;
+    }
+
+    /* Compensa header + barra promocional fixa */
+    main {
+      padding-top: 38px;
+    }
+
+    @keyframes floatProduct {
+      0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(1deg);
       }
     }
 
-    @media (max-width: 860px) {
-      .header-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 14px 0;
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
       }
 
-      .nav-links {
-        width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        padding-bottom: 2px;
+      .book-stack .book-1,
+      .book-stack .book-2,
+      .book-stack .book-cover {
+        animation: none !important;
       }
 
-      .site-header .button {
+      .sparkle {
         display: none;
       }
+    }
 
-      .showcase {
-        min-height: 740px;
-        padding-top: 54px;
+    /* =========================================
+       ESTUDAKI — RESPONSIVIDADE CONSOLIDADA
+       Ordem: base → 1200 → 980 → 760 → 480
+       (sem !important, sem regras duplicadas)
+    ========================================= */
+
+
+    /* =========================================
+       OFFER CARD — IMAGEM 3.PNG (base)
+    ========================================= */
+    .offer-card {
+      min-height: 620px;
+      display: block;
+    }
+
+    .offer-visual {
+      position: absolute;
+      right: 18px;
+      bottom: 0;
+      width: 48%;
+      max-width: 520px;
+      height: 82%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .offer-main-image {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: bottom center;
+      display: block;
+      filter: drop-shadow(0 18px 32px rgba(0, 0, 0, 0.22));
+    }
+
+    /* cadernos / pilha / sparkles — não estão no HTML */
+    .offer-books,
+    .book-stack,
+    .book,
+    .book-cover,
+    .book-shadow,
+    .stack-badge,
+    .sparkle {
+      display: none !important;
+    }
+
+
+    /* =========================================
+       ÍCONES LUCIDE — RESET GLOBAL
+    ========================================= */
+    svg.lucide,
+    .lucide {
+      display: block;
+      flex-shrink: 0;
+      stroke: currentColor;
+    }
+
+
+    /* =========================================
+       HERO BADGES (cards: Foco / Questoes / Vestibulares / Resultado)
+    ========================================= */
+    .hero-badge {
+      min-height: 118px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      text-align: center;
+      padding: 18px 14px;
+    }
+
+    .hero-badge > .icon-chip {
+      width: 54px;
+      height: 54px;
+      min-width: 54px;
+      min-height: 54px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      line-height: 1;
+      font-size: 0;
+    }
+
+    .hero-badge > .icon-chip svg {
+      width: 24px;
+      height: 24px;
+      color: #ffffff;
+      stroke: #ffffff;
+      stroke-width: 2.5;
+      display: block;
+      margin: 0;
+    }
+
+    .hero-badge > div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-badge strong {
+      display: block;
+      color: #ffffff;
+      font-size: 15px;
+      line-height: 1.15;
+    }
+
+    .hero-badge span {
+      display: block;
+      margin-top: 4px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+
+    /* =========================================
+       FEATURE ROW (mini-ícones dos diferenciais)
+    ========================================= */
+    .feature-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .feature-row > .mini-icon {
+      width: 50px;
+      height: 50px;
+      min-width: 50px;
+      min-height: 50px;
+      flex: 0 0 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+      border-radius: 12px;
+      color: #ffffff;
+      line-height: 1;
+      font-size: 0;
+    }
+
+    .feature-row > .mini-icon svg {
+      width: 23px;
+      height: 23px;
+      color: #ffffff;
+      stroke: #ffffff;
+      stroke-width: 2.5;
+      display: block;
+      margin: 0;
+    }
+
+    .feature-row > div { min-width: 0; }
+
+    .feature-row > div > strong {
+      display: block;
+      color: var(--blue-950);
+    }
+
+    .feature-row > div > span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+    }
+
+
+    /* =========================================
+       FLOATING CTA
+    ========================================= */
+    .floating-cta {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      left: auto;
+      z-index: 50;
+      transform: translateY(120%);
+      opacity: 0;
+      transition: transform 240ms ease, opacity 240ms ease;
+    }
+
+    .floating-cta.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+
+    /* =========================================
+       1200px — tablet grande / notebook pequeno
+    ========================================= */
+    @media (max-width: 1200px) {
+      .header-inner { gap: 12px; }
+      .nav-links a {
+        padding: 0 10px;
+        font-size: 13px;
+      }
+
+      .hero { padding: 130px 0 70px; }
+      .hero-side-note {
+        width: min(280px, 24vw);
+        right: 20px;
+        bottom: 36px;
+      }
+
+      .section-head { gap: 20px; }
+
+      .offer-card { min-height: 580px; }
+      .offer-visual {
+        width: 46%;
+        right: 14px;
+      }
+      .offer-main-image { max-width: 320px; }
+    }
+
+
+    /* =========================================
+       980px — tablet
+    ========================================= */
+    @media (max-width: 980px) {
+      .nav-links { display: none; }
+      .hero-side-note { display: none; }
+
+      .hero {
+        padding: 110px 0 60px;
         background:
-          linear-gradient(180deg, rgba(254, 253, 254, 1) 0%, rgba(254, 253, 254, 0.98) 52%, rgba(254, 253, 254, 0.62) 100%),
-          url("assets/estudaki-hero-principal.png") 58% bottom / auto 62% no-repeat,
-          var(--paper);
+          linear-gradient(180deg, rgba(0, 67, 196, 0.95) 0%, rgba(0, 84, 216, 0.85) 60%, rgba(0, 84, 216, 0.55) 100%),
+          url("assets/estudaki-hero-principal.png") right 20% center / cover no-repeat,
+          var(--blue);
       }
-
-      .showcase-inner {
-        min-height: 0;
-        align-items: start;
+      .hero::before {
+        width: 80vw;
+        min-width: 0;
+        left: -15vw;
       }
-
-      .intro,
-      .intro p,
-      .action-row,
-      .trust-row {
-        width: min(100%, calc(100vw - 28px));
-        max-width: calc(100vw - 28px);
-      }
-
-      h1 {
-        font-size: 44px;
-        max-width: calc(100vw - 28px);
-      }
-
-      h2 {
-        font-size: 34px;
+      .hero-badges {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        max-width: 100%;
       }
 
       .section-head,
+      .split-section,
+      .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        text-align: left;
+      }
+      .section-head.center { text-align: center; }
+
+      .strip-inner {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+      }
+
+      .catalog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+
       .cta-box {
         grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+        padding: 30px;
+      }
+      .cta-box .button {
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;
+        min-width: 0;
       }
 
-      .trust-row,
-      .process-grid {
+      .offer-card { min-height: 540px; }
+      .offer-visual {
+        width: 44%;
+        height: 76%;
+      }
+      .offer-main-image { max-width: 280px; }
+    }
+
+
+    /* =========================================
+       760px — celular
+    ========================================= */
+    @media (max-width: 760px) {
+      .container { width: min(100% - 24px, 1180px); }
+
+      .site-header { position: fixed; top: 0; left: 0; right: 0; }
+      .header-inner {
+        min-height: 64px;
+        gap: 10px;
+      }
+      .brand img { width: 130px; }
+      .site-header .button {
+        min-height: 42px;
+        padding: 9px 12px;
+        font-size: 12px;
+        gap: 6px;
+      }
+      .site-header .button svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .promo-bar {
+        position: fixed;
+        top: 68px;
+        left: 0;
+        right: 0;
+        z-index: 58;
+        padding: 6px 12px;
+        margin-top: 0;
+        width: 100%;
+      }
+
+      .promo-bar-inner {
+        width: 100%;
+        gap: 8px;
+        line-height: 1.2;
+      }
+
+      .promo-launch {
+        font-size: 12px;
+        gap: 5px;
+        letter-spacing: 0.02em;
+      }
+
+      .promo-launch svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      .promo-offer-text {
+        font-size: 12px;
+      }
+
+      .promo-countdown {
+        justify-content: center;
+      }
+
+      #promoCountdown,
+      .promo-countdown strong {
+        min-width: 60px;
+        padding: 3px 9px;
+        font-size: 18px;
+        border-radius: 8px;
+      }
+
+      .promo-bar svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      main {
+        padding-top: 52px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 110px 0 50px;
+        background:
+          linear-gradient(180deg, rgba(0, 67, 196, 0.98) 0%, rgba(0, 84, 216, 0.95) 100%),
+          var(--blue);
+      }
+      .hero-content { max-width: 100%; }
+      .logo-lockup {
+        width: min(220px, 60vw);
+        margin-bottom: 18px;
+      }
+      h1 {
+        font-size: clamp(2.4rem, 10vw, 3.6rem);
+        max-width: 12ch;
+      }
+      .hero-text {
+        max-width: 100%;
+        font-size: 1rem;
+      }
+      .hero-actions {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-actions .button {
+        width: 100%;
+        min-height: 48px;
+      }
+      .hero-badges {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .product-strip { margin-top: -18px; }
+      .strip-inner { grid-template-columns: 1fr; }
+      .strip-card { min-height: 84px; }
+
+      .section { padding: 60px 0; }
+      .section-head {
+        text-align: center;
+        margin-bottom: 26px;
+      }
+      .section-head .eyebrow {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      h2 { font-size: clamp(1.6rem, 6vw, 2.4rem); }
+
+      .filters {
+        gap: 6px;
+        justify-content: center;
+      }
+      .filter-button {
+        flex: 1 1 auto;
+        justify-content: center;
+        min-width: 0;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+
+      .catalog-grid {
         grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .product-media {
+        min-height: 320px;
+        padding: 20px;
+      }
+      .product-media img {
+        transform: none;
+        width: min(70%, 240px);
+      }
+      .product-card h3 { font-size: 20px; }
+      .product-actions .button {
+        width: 100%;
+        min-height: 48px;
       }
 
-      .trust-item {
-        background: rgba(255, 255, 255, 0.95);
+      .feature-list {
+        gap: 10px;
+        margin-top: 20px;
+      }
+      .feature-row {
+        padding: 12px;
+        align-items: center;
+      }
+      .feature-row > .mini-icon {
+        width: 44px;
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        flex: 0 0 44px;
       }
 
-      .hero-display {
-        display: none;
+      .offer-card {
+        min-height: 720px;
+        display: flex;
+        flex-direction: column;
+      }
+      .offer-content {
+        width: 100%;
+        max-width: 100%;
+        padding: 28px 22px;
+        text-align: center;
+      }
+      .offer-content .price-box {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .offer-content .button {
+        width: 100%;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .offer-visual {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        height: 280px;
+        margin-top: auto;
+        pointer-events: auto;
+      }
+      .offer-main-image { max-width: 240px; }
+
+      .steps-grid { grid-template-columns: 1fr; }
+      .step-card {
+        min-height: auto;
+        padding: 20px;
       }
 
-      .hero-cover {
-        width: 230px;
+      .faq-grid { gap: 20px; }
+      .faq-grid > div:first-child { text-align: center; }
+      summary {
+        min-height: 50px;
+        padding: 14px 16px;
+        font-size: 15px;
+      }
+      details p {
+        padding: 0 16px 16px;
+        font-size: 14px;
       }
 
-      .hero-cover.primary {
-        right: 44px;
+      .site-footer { padding: 22px 0; }
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+      }
+      .footer-links {
+        justify-content: center;
+        gap: 14px;
+        font-size: 13px;
       }
 
-      .hero-cover.secondary {
-        left: 28px;
+      .floating-cta {
+        left: 14px;
+        right: 14px;
       }
-
-      .hero-cover.tertiary {
-        right: 8px;
+      .floating-cta .button {
+        width: 100%;
+        min-height: 50px;
       }
     }
 
-    @media (max-width: 640px) {
-      .container {
-        width: min(1180px, calc(100vw - 28px));
-      }
 
-      .brand-mark {
-        width: 42px;
-        height: 42px;
-        font-size: 29px;
-      }
-
-      .brand-name {
-        font-size: 20px;
-      }
-
-      h1 {
-        font-size: 34px;
-        max-width: 362px;
-      }
-
-      h2 {
-        font-size: 29px;
-      }
-
-      .intro,
-      .intro p,
-      .action-row,
-      .trust-row {
-        width: min(100%, 362px);
-        max-width: 362px;
-      }
-
-      .intro p,
-      .section-head p,
-      .feature-copy p,
-      .cta-band p {
+    /* =========================================
+       480px — celular pequeno
+    ========================================= */
+    @media (max-width: 480px) {
+      .promo-launch-full { display: none; }
+      .promo-launch-short { display: inline; }
+      .promo-launch { letter-spacing: 0.04em; }
+      .promo-offer-text { font-size: 11px; }
+      #promoCountdown,
+      .promo-countdown strong {
+        min-width: 54px;
         font-size: 16px;
+        padding: 3px 8px;
       }
 
-      .action-row .button,
-      .cta-box .button {
-        width: 100%;
-      }
-
-      .hero-display {
-        width: min(100%, 362px);
-        max-width: 362px;
-        justify-self: start;
-        min-height: 410px;
-      }
-
-      .cover-stage {
-        width: min(100%, 362px);
-        max-width: 362px;
-        min-height: 380px;
-      }
-
-      .hero-cover {
-        width: 192px;
-        padding: 16px;
-      }
-
-      .hero-cover.primary {
-        right: 0;
-        top: 6px;
-      }
-
-      .hero-cover.secondary {
-        left: 0;
-        top: 70px;
-      }
-
-      .hero-cover.tertiary {
-        right: 0;
-        bottom: 12px;
-      }
-
-      .cover-title,
-      .cover-enem .cover-title {
-        font-size: 29px;
-      }
-
-      .cover-number {
-        font-size: 39px;
-      }
-
-      .cover-badge {
-        width: 48px;
-        height: 48px;
-      }
-
-      .product-grid {
+      .hero { padding: 90px 0 40px; }
+      .hero-badges {
         grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      h1 { font-size: clamp(2.2rem, 11vw, 3rem); }
+
+      .filter-button {
+        flex: 1 1 calc(50% - 6px);
+        font-size: 12px;
+        padding: 7px 8px;
       }
 
-      .catalog-section,
-      .feature-section,
-      .process-section,
-      .faq-section {
-        padding: 64px 0;
-      }
+      .product-media { min-height: 280px; }
+      .price-tag { flex-wrap: wrap; }
 
-      .bundle-panel,
-      .bundle-content {
-        min-height: 390px;
-      }
+      .offer-card { min-height: 660px; }
+      .offer-visual { height: 220px; }
+      .offer-main-image { max-width: 200px; }
+      .offer-content { padding: 24px 18px; }
 
-      .bundle-mockup {
-        width: 100%;
-        opacity: 0.48;
-      }
+      .cta-box { padding: 24px 20px; }
+    }
 
-      .bundle-cover-stack {
-        inset: 110px 0 0 auto;
-        width: 100%;
-        opacity: 0.42;
-      }
 
-      .bundle-cover-image.primary {
-        right: 34%;
-        width: 42%;
-      }
-
-      .bundle-cover-image.secondary {
-        right: 58%;
-        width: 36%;
-      }
-
-      .bundle-cover-image.tertiary {
-        right: 4%;
-        width: 36%;
-      }
-
-      .bundle-content {
-        padding: 24px;
-      }
-
-      .bundle-content h3 {
-        font-size: 31px;
-      }
-
-      .bundle-price strong {
-        font-size: 28px;
+    /* =========================================
+       REDUCED MOTION
+    ========================================= */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="page">
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="brand" href="#inicio" aria-label="EstudAki Vestibulares">
-          <span class="brand-mark">&amp;</span>
-          <span class="brand-text">
-            <span class="brand-name">EstudAki</span>
-            <span class="brand-sub">Vestibulares</span>
-          </span>
+  <header class="site-header" aria-label="Topo do site">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="EstudAki Vestibulares">
+        <img src="assets/estudaki-logo.png" alt="EstudAki Vestibulares">
+      </a>
+      <nav class="nav-links" aria-label="Navegacao principal">
+        <a href="#catalogo">Catalogo</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#hotmart">Oferta</a>
+        <a href="#duvidas">Duvidas</a>
+      </nav>
+      <a class="button button-blue" href="#catalogo">
+        <i data-lucide="shopping-cart"></i>
+        Ver materiais
+      </a>
+    </div>
+  </header>
+
+  <div class="promo-bar" role="status" aria-label="Promocao de lancamento">
+    <div class="promo-bar-inner">
+      <span class="promo-launch">
+        <i data-lucide="flame"></i>
+        <strong class="promo-launch-full">PROMOÇÃO DE LANÇAMENTO</strong>
+        <strong class="promo-launch-short">PROMOÇÃO</strong>
+      </span>
+
+      <span class="promo-offer-text">Oferta acaba em</span>
+
+      <span class="promo-countdown" aria-label="Contador da oferta">
+        <strong id="promoCountdown">20:00</strong>
+      </span>
+    </div>
+  </div>
+
+  <main id="inicio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content reveal">
+          <img class="logo-lockup" src="assets/estudaki-logo.png" alt="EstudAki Vestibulares">
+          <p class="eyebrow">PDFs e cadernos de estudo</p>
+          <h1 id="hero-title">Seu futuro <span class="hero-accent">comeca aqui</span></h1>
+          <p class="hero-text">
+            Todos os materiais digitais ja estao disponiveis na Hotmart: visual forte, organizacao direta e foco no que o aluno realmente precisa treinar para ETEC, ENEM e vestibulares.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#catalogo">
+              <i data-lucide="badge-percent"></i>
+              Aproveitar promocao
+            </a>
+            <a class="button button-light" href="#catalogo">
+              <i data-lucide="library-big"></i>
+              Ver catalogo
+            </a>
+          </div>
+          <div class="hero-badges" aria-label="Destaques EstudAki">
+            <div class="hero-badge">
+              <span class="icon-chip"><i data-lucide="target"></i></span>
+              <div><strong>Foco em prova</strong><span>Sem enrolacao</span></div>
+            </div>
+            <div class="hero-badge">
+              <span class="icon-chip"><i data-lucide="clipboard-check"></i></span>
+              <div><strong>Questoes guiadas</strong><span>Treino por objetivo</span></div>
+            </div>
+            <div class="hero-badge">
+              <span class="icon-chip"><i data-lucide="graduation-cap"></i></span>
+              <div><strong>Vestibulares</strong><span>ETEC e ENEM</span></div>
+            </div>
+            <div class="hero-badge">
+              <span class="icon-chip"><i data-lucide="trophy"></i></span>
+              <div><strong>Resultado</strong><span>Rotina com direcao</span></div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-side-note reveal" aria-label="Oferta em destaque">
+          <strong>Promocao de lancamento</strong>
+          <p>Todos os materiais disponiveis por R$ 19,90. Aproveite a oferta de R$ 39,90 por R$ 19,90.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="product-strip" aria-label="Resumo dos produtos">
+      <div class="container strip-inner">
+        <a class="strip-card" href="#catalogo">
+          <img src="assets/capa-etec-formula.png" alt="Formula da Aprovacao ETEC">
+          <div><small>A venda</small><strong>Formula da Aprovacao ETEC</strong></div>
         </a>
-        <nav class="nav-links" aria-label="Navega&ccedil;&atilde;o principal">
-          <a href="#catalogo">Cat&aacute;logo</a>
-          <a href="#diferenciais">Diferenciais</a>
-          <a href="#hotmart">Hotmart</a>
-          <a href="#duvidas">D&uacute;vidas</a>
-        </nav>
-        <a class="button button-primary hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/O105962868T?checkoutMode=2">
-          <i data-lucide="shopping-cart"></i>
-          Comprar F&oacute;rmula ETEC
+        <a class="strip-card" href="#catalogo">
+          <img src="assets/SUPER%20PACK%20250%20QUEST%C3%95ES%20ETEC%20.png" alt="Super Pack 250 Questoes ETEC - Completo">
+          <div><small>Lancamento</small><strong>Super Pack 250 Questoes ETEC</strong></div>
+        </a>
+        <a class="strip-card" href="#catalogo">
+          <img src="assets/capa-enem-exatas.png" alt="Caderno ENEM Exatas e Natureza">
+          <div><small>A venda</small><strong>ENEM 1000 Questoes Exatas e Natureza</strong></div>
         </a>
       </div>
-    </header>
+    </section>
 
-    <main id="inicio">
-      <section class="showcase" aria-labelledby="hero-title">
-        <div class="container showcase-inner">
-          <div class="intro">
-            <p class="eyebrow">Portf&oacute;lio Hotmart</p>
-            <h1 id="hero-title">PDFs EstudAki para ENEM, ETEC e vestibulares</h1>
-            <p>A F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC est&aacute; &agrave; venda agora. Os cadernos ENEM aparecem no cat&aacute;logo como pr&oacute;ximos lan&ccedil;amentos.</p>
-            <div class="action-row">
-              <a class="button button-primary" href="#catalogo">
-                <i data-lucide="library-big"></i>
-                Ver cat&aacute;logo
-              </a>
-              <a class="button button-light hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/O105962868T?checkoutMode=2">
-                <i data-lucide="badge-check"></i>
-                Comprar F&oacute;rmula ETEC
-              </a>
-            </div>
-            <div class="trust-row" aria-label="Destaques">
-              <div class="trust-item">
-                <span class="icon"><i data-lucide="shield-check"></i></span>
-                Compra segura pela Hotmart
-              </div>
-              <div class="trust-item">
-                <span class="icon"><i data-lucide="file-down"></i></span>
-                Entrega digital imediata
-              </div>
-              <div class="trust-item">
-                <span class="icon"><i data-lucide="target"></i></span>
-                Conte&uacute;do focado em prova
-              </div>
-            </div>
+    <section class="section" id="catalogo" aria-labelledby="catalog-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <div>
+            <p class="eyebrow">Catalogo EstudAki</p>
+            <h2 id="catalog-title">Todos os materiais disponiveis com promocao de lancamento</h2>
           </div>
-
-          <div class="hero-display" aria-label="Capas dos PDFs EstudAki">
-            <div class="cover-stage">
-              <article class="pdf-cover hero-cover secondary cover-plan" aria-label="Caderno ENEM 1000 quest&otilde;es - Linguagens e Humanas">
-                <span class="cover-kicker">Linguagens</span>
-                <h2 class="cover-title">ENEM</h2>
-                <div class="cover-subtitle">Humanas</div>
-                <div class="cover-lines"><span></span><span></span><span></span></div>
-                <span class="cover-badge">Em breve</span>
-              </article>
-
-              <article class="pdf-cover hero-cover primary cover-enem" aria-label="Caderno ENEM 1000 quest&otilde;es - Exatas e Natureza">
-                <span class="cover-kicker">Exatas e Natureza</span>
-                <h2 class="cover-title">ENEM</h2>
-                <div class="cover-number">1000</div>
-                <div class="cover-subtitle">quest&otilde;es</div>
-                <div class="cover-lines"><span></span><span></span><span></span></div>
-                <span class="cover-badge">Em breve</span>
-              </article>
-
-              <article class="pdf-cover hero-cover tertiary cover-etec" aria-label="F&oacute;rmula da aprova&ccedil;&atilde;o ETEC">
-                <span class="cover-kicker">Vestibulinho</span>
-                <h2 class="cover-title">F&oacute;rmula da aprova&ccedil;&atilde;o</h2>
-                <div class="cover-subtitle">ETEC 2026</div>
-                <div class="cover-lines"><span></span><span></span><span></span></div>
-                <span class="cover-badge">ETEC</span>
-              </article>
-            </div>
-          </div>
+          <p>Escolha seu material, clique em comprar e receba o PDF direto pela Hotmart. Promocao imperdivel de R$ 39,90 por R$ 19,90 em todos os produtos.</p>
         </div>
-      </section>
 
-      <section class="catalog-section" id="catalogo" aria-labelledby="catalog-title">
-        <div class="container">
-          <div class="section-head">
-            <div>
-              <p class="eyebrow">Cat&aacute;logo de PDFs</p>
-              <h2 id="catalog-title">PDFs EstudAki dispon&iacute;veis e em breve</h2>
-            </div>
-            <p>No momento, somente a F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC est&aacute; com compra ativa pela Hotmart.</p>
-          </div>
-
-          <div class="filter-bar" role="tablist" aria-label="Filtros do cat&aacute;logo">
-            <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
-              <i data-lucide="layout-grid"></i>
-              Todos
-            </button>
-            <button class="filter-button" type="button" data-filter="enem" aria-pressed="false">
-              <i data-lucide="graduation-cap"></i>
-              ENEM
-            </button>
-            <button class="filter-button" type="button" data-filter="etec" aria-pressed="false">
-              <i data-lucide="school"></i>
-              ETEC
-            </button>
-          </div>
-
-          <div class="product-grid">
-            <article class="product-card" data-category="enem questoes">
-              <div class="product-visual">
-                <img class="product-cover-image" src="assets/capa-enem-humanas.png" alt="Capa do caderno ENEM 1000 quest&otilde;es de Linguagens e Ci&ecirc;ncias Humanas">
-              </div>
-              <div class="product-body">
-                <div class="product-tags">
-                  <span class="tag">ENEM</span>
-                  <span class="tag green">Quest&otilde;es</span>
-                </div>
-                <h3>Caderno ENEM 1000 Quest&otilde;es - Linguagens e Humanas</h3>
-                <p>Treino direcionado para revisar Linguagens e Ci&ecirc;ncias Humanas com quest&otilde;es selecionadas.</p>
-                <ul class="product-list">
-                  <li><i data-lucide="check"></i> &Uacute;ltimos anos organizados</li>
-                  <li><i data-lucide="check"></i> Foco em Humanas e Linguagens</li>
-                  <li><i data-lucide="check"></i> Sele&ccedil;&atilde;o estrat&eacute;gica para ENEM</li>
-                </ul>
-                <div class="product-actions">
-                  <button class="button button-disabled" type="button" disabled aria-disabled="true">
-                    <i data-lucide="clock"></i>
-                    Em breve
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card" data-category="enem questoes">
-              <div class="product-visual">
-                <img class="product-cover-image" src="assets/capa-enem-exatas.png" alt="Capa do caderno ENEM 1000 quest&otilde;es de Qu&iacute;mica, F&iacute;sica, Biologia e Matem&aacute;tica">
-              </div>
-              <div class="product-body">
-                <div class="product-tags">
-                  <span class="tag">ENEM</span>
-                  <span class="tag orange">Exatas</span>
-                </div>
-                <h3>Caderno ENEM 1000 Quest&otilde;es - Exatas e Natureza</h3>
-                <p>Quest&otilde;es para treinar Qu&iacute;mica, F&iacute;sica, Biologia e Matem&aacute;tica com foco direto no ENEM.</p>
-                <ul class="product-list">
-                  <li><i data-lucide="check"></i> Quest&otilde;es de exatas</li>
-                  <li><i data-lucide="check"></i> Ci&ecirc;ncias da natureza</li>
-                  <li><i data-lucide="check"></i> Sele&ccedil;&atilde;o estrat&eacute;gica</li>
-                </ul>
-                <div class="product-actions">
-                  <button class="button button-disabled" type="button" disabled aria-disabled="true">
-                    <i data-lucide="clock"></i>
-                    Em breve
-                  </button>
-                </div>
-              </div>
-            </article>
-
-            <article class="product-card" data-category="etec">
-              <div class="product-visual">
-                <img class="product-cover-image" src="assets/capa-etec-formula.png" alt="Capa do ebook F&oacute;rmula da Aprova&ccedil;&atilde;o Vestibulinho ETEC">
-              </div>
-              <div class="product-body">
-                <div class="product-tags">
-                  <span class="tag">ETEC</span>
-                  <span class="tag yellow">Vestibulinho</span>
-                </div>
-                <h3>F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC</h3>
-                <p>Checklist, mapa de conte&uacute;dos, provas antigas e plano intensivo para o Vestibulinho.</p>
-                <ul class="product-list">
-                  <li><i data-lucide="check"></i> 4 &aacute;reas do conhecimento</li>
-                  <li><i data-lucide="check"></i> 10 provas oficiais linkadas</li>
-                  <li><i data-lucide="check"></i> Checklist de evolu&ccedil;&atilde;o</li>
-                </ul>
-                <div class="product-actions">
-                  <a class="button button-primary hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/O105962868T?checkoutMode=2">
-                    <i data-lucide="shopping-bag"></i>
-                    Compre aqui
-                  </a>
-                </div>
-              </div>
-            </article>
-          </div>
+        <div class="filters" role="tablist" aria-label="Filtros do catalogo">
+          <button class="filter-button is-active" type="button" data-filter="all" aria-pressed="true">
+            <i data-lucide="layout-grid"></i>
+            Todos
+          </button>
+          <button class="filter-button" type="button" data-filter="etec" aria-pressed="false">
+            <i data-lucide="school"></i>
+            ETEC
+          </button>
+          <button class="filter-button" type="button" data-filter="enem" aria-pressed="false">
+            <i data-lucide="graduation-cap"></i>
+            ENEM
+          </button>
+          <button class="filter-button" type="button" data-filter="pack" aria-pressed="false">
+            <i data-lucide="package"></i>
+            Super Pack
+          </button>
         </div>
-      </section>
 
-      <section class="feature-section" id="diferenciais" aria-labelledby="feature-title">
-        <div class="container feature-grid">
-          <div class="feature-copy">
-            <p class="eyebrow">Design EstudAki</p>
-            <h2 id="feature-title">Cores fortes, leitura r&aacute;pida e materiais com cara premium</h2>
-            <p>Cada PDF aparece com capa grande, benef&iacute;cios diretos e uma apresenta&ccedil;&atilde;o clara para o aluno entender rapidamente qual material combina com seu objetivo.</p>
-            <div class="feature-list">
-              <div class="feature-item">
-                <span class="icon"><i data-lucide="palette"></i></span>
-                <div>
-                  <strong>Visual que prende aten&ccedil;&atilde;o</strong>
-                  <span>Azul como base, amarelo para destaque, verde para progresso e laranja nos pontos de a&ccedil;&atilde;o.</span>
-                </div>
-              </div>
-              <div class="feature-item">
-                <span class="icon"><i data-lucide="scan-search"></i></span>
-                <div>
-                  <strong>Escolha pelo seu objetivo</strong>
-                  <span>ETEC &agrave; venda agora e cadernos ENEM identificados como pr&oacute;ximos lan&ccedil;amentos.</span>
-                </div>
-              </div>
-              <div class="feature-item">
-                <span class="icon"><i data-lucide="smartphone"></i></span>
-                <div>
-                  <strong>Feito para estudar em qualquer tela</strong>
-                  <span>O cat&aacute;logo reorganiza capas, textos e bot&otilde;es para celular, tablet e computador.</span>
-                </div>
-              </div>
+        <div class="catalog-grid">
+          <article class="product-card reveal" data-category="etec">
+            <div class="product-media">
+              <span class="status-pill"><i data-lucide="zap"></i> A venda</span>
+              <span class="promo-ribbon"><i data-lucide="flame"></i> -50% OFF</span>
+              <img src="assets/capa-etec-formula.png" alt="Capa do PDF Formula da Aprovacao ETEC">
             </div>
-          </div>
-
-          <div class="bundle-panel" id="hotmart">
-            <div class="bundle-cover-stack" aria-hidden="true">
-              <img class="bundle-cover-image secondary" src="assets/capa-enem-humanas.png" alt="">
-              <img class="bundle-cover-image primary" src="assets/capa-etec-formula.png" alt="">
-              <img class="bundle-cover-image tertiary" src="assets/capa-enem-exatas.png" alt="">
-            </div>
-            <div class="bundle-content">
-              <div>
-                <span class="cover-kicker">Oferta Hotmart</span>
-                <h3>F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC</h3>
-                <div class="bundle-chips">
-                  <span>ETEC</span>
-                  <span>Vestibulinho</span>
-                  <span>PDF digital</span>
-                  <span>&Agrave; venda</span>
-                </div>
+            <div class="product-body">
+              <div class="tags">
+                <span class="tag">ETEC</span>
+                <span class="tag orange">Vestibulinho</span>
+                <span class="tag green">Hotmart</span>
               </div>
-              <div class="bundle-bottom">
-                <div class="bundle-price">
-                  <small>Acesso pela Hotmart</small>
-                  <strong>R$ 14,90</strong>
-                </div>
-                <a class="button button-light hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/O105962868T?checkoutMode=2">
-                  <i data-lucide="external-link"></i>
-                  Abrir checkout ETEC
+              <h3>Formula da Aprovacao ETEC</h3>
+              <p>Um roteiro direto para revisar conteudos, treinar provas antigas e chegar no vestibulinho com plano.</p>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i> Conteudo essencial do vestibulinho</li>
+                <li><i data-lucide="check"></i> Provas oficiais e checklist de estudo</li>
+                <li><i data-lucide="check"></i> Entrega digital pela Hotmart</li>
+              </ul>
+              <div class="price-tag">
+                <span class="old">R$ 39,90</span>
+                <span class="new">R$ 19,90</span>
+                <span class="label">Oferta</span>
+              </div>
+              <div class="product-actions">
+                <a class="button button-primary" href="https://pay.hotmart.com/O105962868T" target="_blank" rel="noopener">
+                  <i data-lucide="shopping-bag"></i>
+                  Comprar agora
                 </a>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </article>
 
-      <section class="process-section" aria-labelledby="process-title">
-        <div class="container">
-          <div class="section-head center">
-            <p class="eyebrow">Jornada do aluno</p>
-            <h2 id="process-title">Da Hotmart ao estudo em poucos cliques</h2>
-            <p>Compre a F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC pela Hotmart e acompanhe os cadernos ENEM marcados como em breve.</p>
-          </div>
-          <div class="process-grid">
-            <article class="process-card">
-              <div class="process-number">1</div>
-              <h3>Escolhe a F&oacute;rmula ETEC</h3>
-              <p>O aluno acessa o material ativo do cat&aacute;logo e segue direto para o checkout da Hotmart.</p>
-            </article>
-            <article class="process-card">
-              <div class="process-number">2</div>
-              <h3>Compra com seguran&ccedil;a</h3>
-              <p>A compra acontece no checkout da Hotmart, com pagamento seguro e confirma&ccedil;&atilde;o pela plataforma.</p>
-            </article>
-            <article class="process-card">
-              <div class="process-number">3</div>
-              <h3>Estuda com dire&ccedil;&atilde;o</h3>
-              <p>Depois da entrega digital, o PDF vira roteiro de estudo, revis&atilde;o e acompanhamento de desempenho.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+          <article class="product-card reveal" data-category="pack">
+            <div class="product-media">
+              <span class="status-pill"><i data-lucide="rocket"></i> Lancamento</span>
+              <span class="promo-ribbon"><i data-lucide="flame"></i> -50% OFF</span>
+              <span class="best-seller"><i data-lucide="crown"></i> Mais vendido</span>
+              <img src="assets/SUPER%20PACK%20250%20QUEST%C3%95ES%20ETEC%20.png" alt="Capa do Super Pack 250 Questoes ETEC - Completo">
+            </div>
+            <div class="product-body">
+              <div class="tags">
+                <span class="tag">ETEC</span>
+                <span class="tag orange">250 Questoes</span>
+                <span class="tag green">Completo</span>
+              </div>
+              <h3>Super Pack 250 Questoes ETEC - Completo</h3>
+              <p>Pacotao com 250 questoes selecionadas e comentadas para treinar todas as areas do vestibulinho ETEC em um unico material.</p>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i> 250 questoes comentadas passo a passo</li>
+                <li><i data-lucide="check"></i> Cobre Matematica, Linguagens, Natureza e Humanas</li>
+                <li><i data-lucide="check"></i> PDF digital liberado pela Hotmart</li>
+              </ul>
+              <div class="price-tag">
+                <span class="old">R$ 39,90</span>
+                <span class="new">R$ 19,90</span>
+                <span class="label">Oferta</span>
+              </div>
+              <div class="product-actions">
+                <a class="button button-primary" href="https://pay.hotmart.com/C106176984W" target="_blank" rel="noopener">
+                  <i data-lucide="shopping-bag"></i>
+                  Comprar agora
+                </a>
+              </div>
+            </div>
+          </article>
 
-      <section class="faq-section" id="duvidas" aria-labelledby="faq-title">
-        <div class="container faq-grid">
-          <div>
-            <p class="eyebrow">D&uacute;vidas frequentes</p>
-            <h2 id="faq-title">Respostas claras antes da compra</h2>
-          </div>
-          <div class="faq-list">
-            <details open>
-              <summary>Como recebo o PDF depois da compra?</summary>
-              <p>A entrega acontece pela Hotmart. Depois do pagamento aprovado, o comprador recebe acesso ao material digital pela plataforma.</p>
-            </details>
-            <details>
-              <summary>Posso estudar pelo celular?</summary>
-              <p>Sim. Os materiais s&atilde;o PDFs digitais e podem ser abertos no celular, tablet ou computador.</p>
-            </details>
-            <details>
-              <summary>O material &eacute; indicado para qual fase?</summary>
-              <p>A F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC &eacute; indicada para quem vai prestar o Vestibulinho. Os cadernos ENEM aparecem como pr&oacute;ximos lan&ccedil;amentos.</p>
-            </details>
-            <details>
-              <summary>Tem garantia?</summary>
-              <p>A compra segue as regras da Hotmart e do produto cadastrado. A se&ccedil;&atilde;o de checkout mostra os detalhes atualizados antes do pagamento.</p>
-            </details>
-          </div>
-        </div>
-      </section>
+            <article class="product-card reveal" data-category="enem">
+            <div class="product-media">
+              <span class="status-pill"><i data-lucide="zap"></i> A venda</span>
+              <span class="promo-ribbon"><i data-lucide="flame"></i> -50% OFF</span>
+              <img src="assets/capa-enem-humanas.png" alt="Capa do caderno ENEM Linguagens e Ciencias Humanas">
+            </div>
+            <div class="product-body">
+              <div class="tags">
+                <span class="tag">ENEM</span>
+                <span class="tag green">Humanas</span>
+                <span class="tag orange">Linguagens</span>
+              </div>
+              <h3>ENEM 1000 Questoes - Linguagens e Humanas</h3>
+              <p>Caderno para treinar interpretacao, ciencias humanas e repertorio com selecao estrategica.</p>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i> Questoes por area de competencia</li>
+                <li><i data-lucide="check"></i> Ultimos anos organizados</li>
+                <li><i data-lucide="check"></i> Foco no que mais cai</li>
+              </ul>
+              <div class="price-tag">
+                <span class="old">R$ 39,90</span>
+                <span class="new">R$ 19,90</span>
+                <span class="label">Oferta</span>
+              </div>
+              <div class="product-actions">
+                <a class="button button-primary" href="https://pay.hotmart.com/B106177186Y" target="_blank" rel="noopener">
+                  <i data-lucide="shopping-bag"></i>
+                  Comprar agora
+                </a>
+              </div>
+            </div>
+          </article>
 
-      <section class="cta-band" aria-labelledby="cta-title">
-        <div class="container cta-box">
-          <div>
-            <h2 id="cta-title">Comece pela F&oacute;rmula da Aprova&ccedil;&atilde;o ETEC</h2>
-            <p>Este &eacute; o &uacute;nico PDF &agrave; venda no momento. Os dois cadernos ENEM ficam no cat&aacute;logo como em breve.</p>
-          </div>
-          <a class="button button-light hotmart-fb hotmart__button-checkout" href="https://pay.hotmart.com/O105962868T?checkoutMode=2">
-            <i data-lucide="shopping-cart"></i>
-            Comprar F&oacute;rmula ETEC
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <div class="container footer-inner">
-        <a class="brand" href="#inicio" aria-label="EstudAki Vestibulares">
-          <span class="brand-mark">&amp;</span>
-          <span class="brand-text">
-            <span class="brand-name">EstudAki</span>
-            <span class="brand-sub">Vestibulares</span>
-          </span>
-        </a>
-        <div class="footer-links">
-          <a href="#catalogo">Cat&aacute;logo</a>
-          <a href="#diferenciais">Diferenciais</a>
-          <a href="#hotmart">Hotmart</a>
-          <a href="#duvidas">D&uacute;vidas</a>
+          <article class="product-card reveal" data-category="enem">
+            <div class="product-media">
+              <span class="status-pill"><i data-lucide="zap"></i> A venda</span>
+              <span class="promo-ribbon"><i data-lucide="flame"></i> -50% OFF</span>
+              <img src="assets/capa-enem-exatas.png" alt="Capa do caderno ENEM Exatas e Natureza">
+            </div>
+            <div class="product-body">
+              <div class="tags">
+                <span class="tag">ENEM</span>
+                <span class="tag orange">Exatas</span>
+                <span class="tag green">Natureza</span>
+              </div>
+              <h3>ENEM 1000 Questoes - Exatas e Natureza</h3>
+              <p>Caderno para treinar matematica, fisica, quimica e biologia com foco em prova.</p>
+              <ul class="check-list">
+                <li><i data-lucide="check"></i> Quimica, fisica, biologia e matematica</li>
+                <li><i data-lucide="check"></i> Questoes selecionadas por estrategia</li>
+                <li><i data-lucide="check"></i> Preparacao para 2026</li>
+              </ul>
+              <div class="price-tag">
+                <span class="old">R$ 39,90</span>
+                <span class="new">R$ 19,90</span>
+                <span class="label">Oferta</span>
+              </div>
+              <div class="product-actions">
+                <a class="button button-primary" href="https://pay.hotmart.com/V106177154P" target="_blank" rel="noopener">
+                  <i data-lucide="shopping-bag"></i>
+                  Comprar agora
+                </a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
-    </footer>
+    </section>
+
+    <section class="section" id="diferenciais" aria-labelledby="feature-title">
+      <div class="container split-section">
+        <div class="text-panel reveal">
+          <p class="eyebrow">Diferenciais</p>
+          <h2 id="feature-title">Visual jovem, estrutura seria e foco em aprovacao</h2>
+          <p>O design usa a energia dos exemplos: azul forte, laranja para destaque, verde para progresso e amarelo para chamar atencao. Mas a leitura continua limpa, rapida e comercial.</p>
+          <div class="feature-list">
+            <div class="feature-row">
+              <span class="mini-icon"><i data-lucide="palette"></i></span>
+              <div><strong>Identidade EstudAki consistente</strong><span>Cores, capas, botoes e microinteracoes seguem a mesma linguagem visual.</span></div>
+            </div>
+            <div class="feature-row">
+              <span class="mini-icon"><i data-lucide="scan-search"></i></span>
+              <div><strong>Oferta sem ruido</strong><span>Todos os materiais estao liberados para compra na Hotmart por apenas R$ 19,90, com promocao de R$ 39,90.</span></div>
+            </div>
+            <div class="feature-row">
+              <span class="mini-icon"><i data-lucide="smartphone"></i></span>
+              <div><strong>Mobile pensado de verdade</strong><span>Cards, hero e CTA reorganizam para tela pequena sem sobrepor texto.</span></div>
+            </div>
+          </div>
+        </div>
+
+        <article class="offer-card reveal" id="hotmart" aria-labelledby="offer-title">
+          <span class="stack-badge">
+            <i data-lucide="layers"></i>
+            2 volumes inclusos
+          </span>
+
+          <span class="sparkle s1"></span>
+          <span class="sparkle s2"></span>
+          <span class="sparkle s3"></span>
+          <span class="sparkle s4"></span>
+
+          <div class="offer-content">
+            <p class="eyebrow">Oferta de lancamento</p>
+
+            <h3 id="offer-title">Formula ETEC</h3>
+
+            <p>
+              Material digital focado no vestibulinho, com compra segura pela Hotmart
+              e acesso imediato apos o pagamento.
+            </p>
+
+            <div class="price-box">
+              <span>De R$ 39,90 por</span>
+              <strong>R$ 19,90</strong>
+            </div>
+
+            <br>
+
+            <a class="button button-light" href="https://pay.hotmart.com/O105962868T" target="_blank" rel="noopener">
+              <i data-lucide="external-link"></i>
+              Comprar agora
+            </a>
+          </div>
+
+          <div class="offer-visual" aria-label="Imagem principal da oferta">
+            <img
+              class="offer-main-image"
+              src="assets/3.png"
+              alt="Imagem principal da oferta EstudAki"
+            />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="section-head center reveal">
+          <p class="eyebrow">Como funciona</p>
+          <h2 id="steps-title">Da descoberta ao estudo em poucos cliques</h2>
+          <p>Uma jornada simples, pensada para aluno jovem e para compra digital sem atrito.</p>
+        </div>
+        <div class="steps-grid">
+          <article class="step-card reveal">
+            <div class="step-number">1</div>
+            <h3>Escolha o material</h3>
+            <p>Todos os materiais estao disponiveis: Formula ETEC, cadernos ENEM e o Super Pack 250 Questoes - Completo.</p>
+          </article>
+          <article class="step-card reveal">
+            <div class="step-number">2</div>
+            <h3>Compre com seguranca</h3>
+            <p>Checkout direto na Hotmart, com pagamento seguro, entrega digital e acesso imediato apos aprovacao.</p>
+          </article>
+          <article class="step-card reveal">
+            <div class="step-number">3</div>
+            <h3>Estude com direcao</h3>
+            <p>O PDF vira roteiro de revisao, treino e organizacao, sem deixar o aluno perdido no excesso de conteudo.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="duvidas" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="reveal">
+          <p class="eyebrow">Duvidas frequentes</p>
+          <h2 id="faq-title">Antes de comprar, tudo claro</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details open>
+            <summary>Quais produtos estao a venda agora?</summary>
+            <p>Todos os materiais estao disponiveis na Hotmart: Formula da Aprovacao ETEC, ENEM 1000 Questoes (Linguagens e Humanas + Exatas e Natureza) e o Super Pack 250 Questoes ETEC - Completo.</p>
+          </details>
+          <details>
+            <summary>Como funciona a promocao?</summary>
+            <p>Todos os materiais estao com 50% OFF: de R$ 39,90 por R$ 19,90. A oferta vale para os quatro produtos do catalogo.</p>
+          </details>
+          <details>
+            <summary>Como recebo o PDF?</summary>
+            <p>A entrega acontece pela Hotmart. Depois do pagamento aprovado, o comprador recebe acesso digital ao material.</p>
+          </details>
+          <details>
+            <summary>Funciona no celular?</summary>
+            <p>Sim. O material e digital e pode ser aberto no celular, tablet ou computador.</p>
+          </details>
+          <details>
+            <summary>O Super Pack 250 Questoes substitui os outros materiais?</summary>
+            <p>Nao necessariamente. O Super Pack e um material complementar e completo para treinar todas as areas do vestibulinho. Voce pode escolher o que faz mais sentido para sua rotina de estudos.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="container cta-box reveal">
+        <div>
+          <h2 id="cta-title">Aproveite todos os materiais por R$ 19,90</h2>
+          <p>Promocao de lancamento: de R$ 39,90 por R$ 19,90 em todos os produtos. Escolha o seu e estude com direcao.</p>
+        </div>
+        <a class="button button-light" href="#catalogo">
+          <i data-lucide="shopping-cart"></i>
+          Ver catalogo
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio" aria-label="EstudAki Vestibulares">
+        <img src="assets/estudaki-logo.png" alt="EstudAki Vestibulares">
+      </a>
+      <div class="footer-links">
+        <a href="#catalogo">Catalogo</a>
+        <a href="#diferenciais">Diferenciais</a>
+        <a href="#hotmart">Oferta</a>
+        <a href="#duvidas">Duvidas</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="floating-cta" aria-hidden="false">
+    <a class="button button-primary" href="#catalogo">
+      <i data-lucide="shopping-bag"></i>
+      Aproveitar R$ 19,90
+    </a>
   </div>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script>
     const filterButtons = document.querySelectorAll("[data-filter]");
-    const productCards = document.querySelectorAll("[data-category]");
-    const revealTargets = document.querySelectorAll(
-      ".section-head, .product-card, .feature-item, .bundle-panel, .process-card, .faq-list details"
-    );
+    const cards = document.querySelectorAll("[data-category]");
+    const revealTargets = document.querySelectorAll(".reveal, .product-card, .step-card");
+    const floatingCta = document.querySelector(".floating-cta");
 
     filterButtons.forEach((button) => {
       button.addEventListener("click", () => {
         const filter = button.dataset.filter;
 
         filterButtons.forEach((item) => {
-          const isActive = item === button;
-          item.classList.toggle("is-active", isActive);
-          item.setAttribute("aria-pressed", String(isActive));
+          const active = item === button;
+          item.classList.toggle("is-active", active);
+          item.setAttribute("aria-pressed", String(active));
         });
 
-        productCards.forEach((card) => {
+        cards.forEach((card) => {
           const categories = card.dataset.category.split(" ");
-          const shouldShow = filter === "all" || categories.includes(filter);
-          card.classList.toggle("is-hidden", !shouldShow);
+          card.classList.toggle("is-hidden", filter !== "all" && !categories.includes(filter));
         });
       });
     });
 
-    revealTargets.forEach((element, index) => {
-      element.classList.add("reveal");
-      element.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 70}ms`);
+    revealTargets.forEach((target, index) => {
+      target.style.setProperty("--delay", `${Math.min(index % 5, 4) * 70}ms`);
     });
 
     if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add("is-visible");
-              revealObserver.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.16 }
-      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
 
-      revealTargets.forEach((element) => revealObserver.observe(element));
+      revealTargets.forEach((target) => observer.observe(target));
     } else {
-      revealTargets.forEach((element) => element.classList.add("is-visible"));
+      revealTargets.forEach((target) => target.classList.add("is-visible"));
     }
+
+    const updateFloatingCta = () => {
+      floatingCta.classList.toggle("is-visible", window.scrollY > 760);
+    };
+
+    updateFloatingCta();
+    window.addEventListener("scroll", updateFloatingCta, { passive: true });
+
+    // Contador regressivo da oferta (reinicia a cada carregamento)
+    const promoCountdownEl = document.getElementById("promoCountdown");
+
+    let promoTime = 20 * 60;
+
+    const updatePromoCountdown = () => {
+      if (!promoCountdownEl) return;
+
+      const minutes = Math.floor(promoTime / 60);
+      const seconds = promoTime % 60;
+
+      promoCountdownEl.textContent = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+      if (promoTime > 0) {
+        promoTime -= 1;
+      }
+    };
+
+    updatePromoCountdown();
+    setInterval(updatePromoCountdown, 1000);
 
     if (window.lucide) {
       window.lucide.createIcons();
